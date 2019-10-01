@@ -1,6 +1,15 @@
 package session10;
 
+/**
+ * Utility class that can be used to move or print shapes.
+ */
 public class ShapeMover {
+    /**
+     * Prints a shape, moves it to a new position, and then prints it again.
+     *
+     * @param shape The shape to move and print.
+     * @param position The new position to which the shape should me moved.
+     */
     public static void moveShape(Shape shape, Position position) {
         System.out.println("BEFORE MOVING");
         printShape(shape);
@@ -11,6 +20,12 @@ public class ShapeMover {
         printShape(shape);
     }
 
+    /**
+     * Prints the details about a shape including the class name, position,
+     * area, perimeter, fill color, and outline.
+     *
+     * @param shape The shape to print.
+     */
     public static void printShape(Shape shape) {
         System.out.println("Shape: " + shape.getClass());
         System.out.println("  position: " + shape.getPos());
@@ -20,6 +35,11 @@ public class ShapeMover {
         System.out.println("  outline: " + shape.getLineColor() + "\n");
     }
 
+    /**
+     * Tests the move method with various different shapes.
+     *
+     * @param args Command line arguments. Not used.
+     */
     public static void main(String[] args) {
         Shape shape = new Shape(new Position(100, 100), "Red", "Blue");
         moveShape(shape, new Position(200, 200));
